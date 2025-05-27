@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from '@vercel/analytics/react'
+import { Geist, Geist_Mono, Underdog, Cinzel_Decorative } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,6 +12,18 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const underdog = Underdog({
+  variable: "--font-underdog",
+  subsets: ["latin"],
+  weight: "400",
+})
+
+const cinzelDecorative = Cinzel_Decorative({
+  variable: '--font-cinzel-decorative',
+  subsets: ['latin'],
+  weight: ['400', '700', '900'],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,9 +38,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${underdog.variable} ${cinzelDecorative.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );

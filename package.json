@@ -9,19 +9,40 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^10.0.7",
+    "@react-three/fiber": "^9.1.2",
+    "@sanity/client": "^7.1.0",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.88.0",
+    "@vercel/analytics": "^1.5.0",
+    "autoprefixer": "^10.4.21",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.10.0",
+    "keen-slider": "^6.8.6",
+    "next": "15.3.1",
+    "next-sanity": "^9.10.6",
+    "next-sanity-client": "^1.0.8",
+    "postcss": "^8.5.3",
     "react": "^19.0.0",
+    "react-curved-text": "^3.0.1",
     "react-dom": "^19.0.0",
-    "next": "15.3.1"
+    "react-hook-form": "^7.56.3",
+    "react-icons": "^5.5.0",
+    "react-intersection-observer": "^9.16.0",
+    "react-use-draggable-scroll": "^0.4.7",
+    "three": "^0.176.0",
+    "three-globe": "^2.42.4"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
+    "@types/react-curved-text": "^2.0.3",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4.1.5",
+    "typescript": "^5"
   }
 }
