@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { Skill as SkillType } from '@/app/types/typings'
+import Image from 'next/image'
 
 type Props = {
   skill: SkillType
@@ -26,7 +27,7 @@ export default function Skill({ skill }: Props) {
         {isPlaceholder ? (
           <div className="w-full h-full rounded-lg bg-zinc-800/30" />
         ) : (
-          <img
+          <Image
             src={skill.imageUrl}
             alt={skill.title}
             className="object-contain w-full h-full rounded-lg transition-transform duration-300 group-hover:scale-105"

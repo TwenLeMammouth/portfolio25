@@ -1,5 +1,4 @@
 import React from "react"
-import { FaBug, FaLightbulb } from "react-icons/fa"
 import { Lesson } from "@/app/types/typings"
 import LessonCard from "../LessonCard"
 

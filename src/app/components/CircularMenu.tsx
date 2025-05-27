@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { motion } from "framer-motion"
 import { useScrollToSection } from '@/app/hooks/useScrollToSection'
 
@@ -67,7 +67,7 @@ export default function HeroButtonRing() {
           </pattern>
         </defs>
   
-        // Experience
+        {/* Experience */}
         <g 
           className='button-group' 
           id="experience" 
@@ -129,7 +129,7 @@ export default function HeroButtonRing() {
             />
         </g>
 
-        // About
+        {/* About */}
         <g 
           className='button-group' 
           id="about" 
@@ -171,7 +171,7 @@ export default function HeroButtonRing() {
             />
         </g>
         
-        // Projects
+        {/* Projects */}
         <g 
           className='button-group' 
           id="projects" 
@@ -225,7 +225,7 @@ export default function HeroButtonRing() {
             />
         </g>
         
-        // Achievements
+        {/* Achievements */}
         <g 
           className='button-group' 
           id="achievements" 
@@ -295,7 +295,7 @@ export default function HeroButtonRing() {
             />
         </g>
         
-        // Skills
+        {/* Skills */}
         <g 
           className='button-group' 
           id="skills" 

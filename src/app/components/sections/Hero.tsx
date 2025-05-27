@@ -1,12 +1,10 @@
 "use client"
 
-import React, { Suspense, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 // import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import BackgroundCircles from '@/app/components/background/BackgroundCircles'
 import HeroMagicTagline from '@/app/components/background/Tagline'
-import CircularMenu from '@/app/components/CircularMenu'
 import Image from 'next/image'
-import Link from 'next/link'
 import { PageInfo } from '@/app/types/typings'
 import { useInView } from 'react-intersection-observer'
 import CircularButtons from '../CircularButtons'
@@ -17,13 +15,6 @@ type Props = {
 
 export default function Hero({ pageInfo }: Props) {
 
-  // const scrollToSection = (id: string) => {
-  //   const section = document.getElementById(id)
-  //   if (section) {
-  //     section.scrollIntoView({ behavior: 'smooth' })
-  //   }
-  // }
-
   const { ref, inView } = useInView({ threshold: 0.3 })
   const [hasBeenInView, setHasBeenInView] = useState(false)
 
@@ -33,7 +24,8 @@ export default function Hero({ pageInfo }: Props) {
     }
   }, [inView, hasBeenInView])
 
-  const [unlocked, setUnlocked] = useState(false)
+  // On ne garde que la fonction setter, la valeur n'est jamais utilisée
+  const [, setUnlocked] = useState(false)
 
   useEffect(() => {
   let buffer = ""

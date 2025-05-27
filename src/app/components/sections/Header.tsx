@@ -63,48 +63,48 @@ export default function Header({ socials }: Props) {
   const scrollContainerRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
-  scrollContainerRef.current = document.getElementById("scroll-container")
-  const container = scrollContainerRef.current
+    scrollContainerRef.current = document.getElementById("scroll-container")
+    const container = scrollContainerRef.current
 
-  const handleScroll = () => {
-    if (!container) return
+    const handleScroll = () => {
+      if (!container) return
 
-    const sections = container.querySelectorAll("section[data-title]")
-    let newTitle = " "
-    const middle = window.innerHeight / 2
-    let foundSection = false
+      const sections = container.querySelectorAll("section[data-title]")
+      let newTitle = " "
+      const middle = window.innerHeight / 2
+      let foundSection = false
 
-    sections.forEach((section) => {
-      const rect = section.getBoundingClientRect()
-      if (rect.top <= middle && rect.bottom >= middle) {
-        const title = section.getAttribute("data-title")
-        if (title) {
-          newTitle = title
-          foundSection = true
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect()
+        if (rect.top <= middle && rect.bottom >= middle) {
+          const title = section.getAttribute("data-title")
+          if (title) {
+            newTitle = title
+            foundSection = true
+          }
         }
+      })
+
+      // Si aucune section n’est trouvée, on efface le titre
+      if (!foundSection) {
+        if (activeTitle !== "") setActiveTitle("")
+        return
       }
-    })
 
-    // Si aucune section n’est trouvée, on efface le titre
-    if (!foundSection) {
-      if (activeTitle !== "") setActiveTitle("")
-      return
+      if (newTitle !== activeTitle) {
+        setScrollDirection(container.scrollTop > lastScrollY.current ? "down" : "up")
+        lastScrollY.current = container.scrollTop
+        setActiveTitle(newTitle || '')
+      }
     }
 
-    if (newTitle !== activeTitle) {
-      setScrollDirection(container.scrollTop > lastScrollY.current ? "down" : "up")
-      lastScrollY.current = container.scrollTop
-      setActiveTitle(newTitle || '')
+    container?.addEventListener("scroll", handleScroll)
+    handleScroll()
+
+    return () => {
+      container?.removeEventListener("scroll", handleScroll)
     }
-  }
-
-  container?.addEventListener("scroll", handleScroll)
-  handleScroll()
-
-  return () => {
-    container?.removeEventListener("scroll", handleScroll)
-  }
-}, [])
+  }, [activeTitle])
 
   return (
     <header className='sticky top-0 p-3 sm:p-5 flex items-start justify-between mx-auto z-20 xl:items-center'>
@@ -113,10 +113,19 @@ export default function Header({ socials }: Props) {
           variants={headerMotion}
           initial="init"
           animate="show"
+          role="navigation"
+          aria-label="Liens vers les réseaux sociaux"
           className='hidden sm:flex flex-row gap-2 items-center relative rounded-full pl-8 -left-9 ring-1 ring-gray-500'>
           {socials?.map((social) => (
-            <Link key={social._id} href={social.link} target="_blank">
-              <div className="p-3 rounded-full ring-1 ring-gray-500 text-white hover:text-[#12DD88] hover:ring-[#12DD88] hover:scale-110 transition-all duration-300">
+            <Link 
+            key={social._id} 
+            href={social.link} 
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Lien vers mon profil ${social.title}`}>
+              <div role="img"
+              aria-hidden="true"
+              className="p-3 rounded-full ring-1 ring-gray-500 text-white hover:text-[#12DD88] hover:ring-[#12DD88] hover:scale-110 transition-all duration-300">
                 {getIconFromPlatform(social.title)}
               </div>
             </Link>
@@ -219,7 +228,7 @@ export default function Header({ socials }: Props) {
               <FaEnvelope className="contactIcon text-[#fff]"/>
             </div>
 
-            <div className='uppercase hidden pl-3 sm:inline-flex text-sm text-gray-500'>
+            <div className='uppercase hidden pl-3 sm:inline-flex text-sm text-gray-200'>
               <p> Get in touch</p>
             </div>
 

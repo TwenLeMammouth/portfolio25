@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Achievement } from "@/app/types/typings"
 import { FaTimes } from "react-icons/fa"
 import { format } from "date-fns"
+import Image from "next/image"
 
 type Props = {
   achievement: Achievement
@@ -36,7 +37,7 @@ export default function AchievementModal({ achievement, onClose }: Props) {
 
         {/* Image */}
         {achievement.illustrationUrl && (
-          <img
+          <Image
             src={achievement.illustrationUrl}
             alt={achievement.title}
             className="w-full max-h-60 object-cover rounded-lg mb-4"

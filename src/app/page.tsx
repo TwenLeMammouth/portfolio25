@@ -1,7 +1,6 @@
 
 import Head from 'next/head'
 import Link from 'next/link'
-import { Inter } from "next/font/google"
 import dynamic from "next/dynamic"
 
 import { fetchPageInfo } from '@/app/utils/fetchPageInfo'
@@ -26,10 +25,7 @@ const Achievements = dynamic(() => import('@/app/components/sections/Achievement
 const Skills = dynamic(() => import('@/app/components/sections/Skills'))
 const Projects = dynamic(() => import('@/app/components/sections/Projects'))
 const ContactMe = dynamic(() => import('@/app/components/sections/ContactMe'))
-const Lessons = dynamic(() => import('@/app/components/sections/Lessons'))
 const Arrow = dynamic(() => import('@/app/components/Arrow'))
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default async function Home() {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 640

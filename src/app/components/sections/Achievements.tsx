@@ -77,14 +77,21 @@ export default function Achievements({ achievements }: Props) {
       </div>
 
       {/* Pagination dots */}
-      <div className="flex justify-center gap-2 mt-6">
+      <div 
+      className="flex justify-center gap-2 mt-6" 
+      role="tablist"
+      aria-label="Achievements carousel navigation">
         {achievementGroups.map((_, i) => (
           <button
             key={i}
+            type="button"
             onClick={() => emblaApi?.scrollTo(i)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               i === selectedIndex ? "bg-[#12DD88]" : "bg-white/30"
             }`}
+            aria-label={`Go to group ${i + 1}`}
+            aria-current={i === selectedIndex ? "true" : undefined}
+            role="tab"
           />
         ))}
       </div>

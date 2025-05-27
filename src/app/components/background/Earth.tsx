@@ -3,7 +3,7 @@
 
 import React, { Suspense, useMemo, useEffect, useRef, useState } from 'react'
 import { Canvas, useThree } from '@react-three/fiber'
-import { OrbitControls, Preload, Stats } from '@react-three/drei'
+import { Preload } from '@react-three/drei'
 import ThreeGlobe from 'three-globe'
 import * as THREE from 'three'
 import { Experience, Location, Trip } from '@/app/types/typings'
@@ -17,14 +17,7 @@ export type EarthCanvasProps = {
   paused?: boolean
 }
 
-// Composant interne pour la scène, où on peut utiliser les hooks R3F
-function GlobeScene({ experiences, locations, trips, focusIdx, paused }: EarthCanvasProps) {
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
-  const camDist = isMobile ? 180 : 300
-
-  const { camera } = useThree()
-
-  const labelPositions: Record<string, 'top' | 'right' | 'bottom' | 'left'> = {
+const labelPositions: Record<string, 'top' | 'right' | 'bottom' | 'left'> = {
     'Billom': 'left',
     'Scionzier': 'right',
     'Clermont-Ferrand': 'top',
@@ -32,7 +25,16 @@ function GlobeScene({ experiences, locations, trips, focusIdx, paused }: EarthCa
     'Tokyo': 'bottom',
     'Brisbane': 'top',
     // Ajoute d'autres villes ici
-  }
+}
+
+// Composant interne pour la scène, où on peut utiliser les hooks R3F
+function GlobeScene({ experiences, locations, trips, focusIdx, paused }: EarthCanvasProps) {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
+  const camDist = isMobile ? 180 : 300
+
+  const { camera } = useThree()
+
+  
   // Préparer les données
   const pData = useMemo(
     () => locations.map(loc => ({
@@ -119,7 +121,7 @@ function GlobeScene({ experiences, locations, trips, focusIdx, paused }: EarthCa
     travelTimeRef.current = angle / angularSpeed
     // reset progress
     progressRef.current = 0
-  }, [targetLoc])
+  }, [targetLoc, camera, angularSpeed])
   
   // Animate camera and controls with controlled spherical interpolation
   useFrame((state, delta) => {

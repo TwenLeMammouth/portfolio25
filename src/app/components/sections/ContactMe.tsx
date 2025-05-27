@@ -48,7 +48,7 @@ export default function ContactMe({ pageInfo }: Props) {
 
             {/* Titre */}
             <h4 className="text-xl sm:text-4xl font-semibold text-center text-white z-20 leading-snug sm:leading-tight ">
-                Let's get in touch and make something{" "}
+                Let&rsquo;s get in touch and make something{" "}
                 <span className="underline decoration-[#12DD88]/60">amazing</span>.
             </h4>
 

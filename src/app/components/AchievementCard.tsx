@@ -4,6 +4,7 @@ import React from "react"
 import { motion } from "framer-motion"
 import { Achievement } from "@/app/types/typings"
 import { format } from "date-fns"
+import Image from "next/image"
 
 type Props = {
   achievement: Achievement
@@ -43,7 +44,7 @@ export default function AchievementCard({ achievement, onClick }: Props) {
 
       {/* Image */}
       {achievement.illustrationUrl && (
-        <img
+        <Image
           src={achievement.illustrationUrl}
           alt={achievement.title}
           className="w-[40%] sm:w-full sm:max-h-40 object-cover rounded-md"

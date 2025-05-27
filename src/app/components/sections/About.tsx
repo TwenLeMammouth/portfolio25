@@ -6,6 +6,7 @@ import { PageInfo } from '@/app/types/typings'
 import dynamic from 'next/dynamic'
 import { BasicLoader } from '@/app/components/background/Loader'
 import { useInView } from 'react-intersection-observer'
+import type { JSX } from "react"
  
 const Canvas = dynamic(() => import('@/app/components/background/Particles'), {
   ssr: false,
@@ -60,6 +61,8 @@ export default function About({ pageInfo }: Props) {
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     transition={{ duration: 1.2 }}
+    role="region"
+    aria-labelledby="about-title"
     className="flex flex-col relative h-[100dvh] text-center max-w-7xl px-4 py-12 justify-center mx-auto items-center">
         {hasBeenInView && (
             <Suspense fallback={<BasicLoader />}>
@@ -77,7 +80,7 @@ export default function About({ pageInfo }: Props) {
         loading="lazy"
         />
         <div className="z-20 space-y-2 sm:space-y-6 max-w-xl rounded-lg bg-zinc-800/40">
-            <h4 className="text-lg sm:text-3xl font-semibold underline text-[#eee] drop-shadow">Little Background</h4>
+            <h2 id="about-title" className="text-lg sm:text-3xl font-semibold underline text-[#eee] drop-shadow">Little Background</h2>
             <p className="text-[0.7rem] sm:text-lg text-gray-300 text-shadow-2xs text-shadow-zinc-800 whitespace-pre-line">
                 {pageInfo?.backgroundInformation && renderHighlightedText(pageInfo.backgroundInformation)}
             </p>
