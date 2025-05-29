@@ -60,15 +60,6 @@ export default async function Home() {
       id="scroll-container"
       className="bg-[rgb(36,36,36)] text-white h-[100dvh] snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scroll-smooth z-0 scrollbar-thin scrollbar-track-rounded-lg scrollbar-thumb-rounded-lg scrollbar-track-gray-500 scrollbar-thumb-[#12DD88]/80"
     >
-      <Head>
-        <title>Vincent Groslier – Developer Portfolio</title>
-        <meta name="description" content="Explore the projects, experience, and achievements of Vincent Groslier, full-stack developer." />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content="Vincent Groslier – Portfolio" />
-        <meta property="og:image" content="/og-image.png" />
-        <meta property="og:description" content="Developer with a passion for impactful work. View my experience, achievements, and more." />
-        <meta property="og:url" content="https://vincentg-portfolio.vercel.app" />
-      </Head>
 
       <Header socials={socials} />
 

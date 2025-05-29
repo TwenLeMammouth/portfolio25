@@ -28,11 +28,11 @@ const cinzelDecorative = Cinzel_Decorative({
 export const metadata: Metadata = {
   title: "Vincent Groslier – Portfolio",
   description: "Frontend developer passionate about elegant code and modern magic.",
-  metadataBase: new URL("https://vincent-groslier.world"),
+  metadataBase: new URL("https://vincentg-portfolio.vercel.app/"),
   openGraph: {
     title: "Vincent Groslier – Portfolio",
     description: "Explore my projects, skills, and what makes me unique.",
-    url: "https://vincent-groslier.world",
+    url: "https://vincentg-portfolio.vercel.app/",
     siteName: "Vincent Groslier",
     images: [
       {
