@@ -65,8 +65,9 @@ export default async function Home() {
         <meta name="description" content="Explore the projects, experience, and achievements of Vincent Groslier, full-stack developer." />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content="Vincent Groslier – Portfolio" />
-        <meta property="og:image" content="/preview.png" />
+        <meta property="og:image" content="/og-image.png" />
         <meta property="og:description" content="Developer with a passion for impactful work. View my experience, achievements, and more." />
+        <meta property="og:url" content="https://vincentg-portfolio.vercel.app" />
       </Head>
 
       <Header socials={socials} />
