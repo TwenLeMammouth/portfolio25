@@ -47,6 +47,8 @@ export default function AchievementCard({ achievement, onClick }: Props) {
         <Image
           src={achievement.illustrationUrl}
           alt={achievement.title}
+          width={500}
+          height={500}
           className="w-[40%] sm:w-full sm:max-h-40 object-cover rounded-md"
         />
       )}

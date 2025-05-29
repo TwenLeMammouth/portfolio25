@@ -62,7 +62,7 @@ export default function Achievements({ achievements }: Props) {
       transition={{ duration: 1.2 }}
     >
       {/* Embla Carousel wrapper */}
-      <div className="overflow-hidden w-full max-w-7xl" ref={emblaRef}>
+      <div className="overflow-hidden w-full max-w-7xl p-8" ref={emblaRef}>
         <div className="flex gap-6">
           {achievementGroups.map((group, index) => (
             <div key={index} className="flex-[0_0_100%]">

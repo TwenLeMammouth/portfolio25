@@ -40,6 +40,8 @@ export default function AchievementModal({ achievement, onClose }: Props) {
           <Image
             src={achievement.illustrationUrl}
             alt={achievement.title}
+            width={500}
+            height={500}
             className="w-full max-h-60 object-cover rounded-lg mb-4"
           />
         )}

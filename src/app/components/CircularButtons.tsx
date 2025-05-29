@@ -15,7 +15,7 @@ const CircularButtons = () => {
   const scrollToSection = useScrollToSection()
 
   return (
-    <div className="absolute bottom-20 sm:bottom-70 flex flex-row flex-wrap justify-center gap-2 p-2 sm:p-6 max-w-xl mx-auto">
+    <div className="mb-8 flex flex-wrap justify-center gap-2 p-2 sm:p-6 max-w-xl">
       {buttons.map(({ id, label }) => (
         <button
           key={id}

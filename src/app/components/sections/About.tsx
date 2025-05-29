@@ -63,7 +63,7 @@ export default function About({ pageInfo }: Props) {
     transition={{ duration: 1.2 }}
     role="region"
     aria-labelledby="about-title"
-    className="flex flex-col relative h-[100dvh] text-center max-w-7xl px-4 py-12 justify-center mx-auto items-center">
+    className="z-20 flex flex-col relative h-[100dvh] text-center max-w-7xl px-4 py-12 justify-center mx-auto items-center">
         {hasBeenInView && (
             <Suspense fallback={<BasicLoader />}>
                 <Canvas paused={!inView} />
@@ -76,12 +76,12 @@ export default function About({ pageInfo }: Props) {
         whileInView={{ x: 0, opacity: 1, }}
         src={pageInfo?.profilePicUrl}
         alt="Portrait"
-        className="w-32 h-32 sm:w-52 sm:h-52 md:w-60 md:h-60 xl:w-[400px] xl:h-[400px] mb-4 rounded-xl object-cover shadow-lg"
+        className="z-20 w-32 h-32 sm:w-52 sm:h-52 md:w-55 md:h-55 xl:w-[350px] xl:h-[350px] my-8 rounded-xl object-cover shadow-lg"
         loading="lazy"
         />
-        <div className="z-20 space-y-2 sm:space-y-6 max-w-xl rounded-lg bg-zinc-800/40">
+        <div className="z-20 space-y-2 sm:space-y-6 max-w-xl md:max-w-4xl rounded-lg bg-zinc-800/40">
             <h2 id="about-title" className="text-lg sm:text-3xl font-semibold underline text-[#eee] drop-shadow">Little Background</h2>
-            <p className="text-[0.7rem] sm:text-lg text-gray-300 text-shadow-2xs text-shadow-zinc-800 whitespace-pre-line">
+            <p className="text-[0.7rem] sm:text-sm lg:text-md xl:text-lg text-gray-300 text-shadow-2xs text-shadow-zinc-800 whitespace-pre-line">
                 {pageInfo?.backgroundInformation && renderHighlightedText(pageInfo.backgroundInformation)}
             </p>
         </div>

@@ -49,17 +49,17 @@ export default function Hero({ pageInfo }: Props) {
   }
     
   return (
-    <div ref={ref} className="relative h-[100dvh] flex flex-col justify-center items-center text-center overflow-hidden">
+    <div ref={ref} className="relative min-h-[100dvh] flex flex-col justify-center items-center text-center overflow-hidden">
   
       {/* Background */}
       {hasBeenInView && 
-        <div className="absolute top-[38%] sm:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
+        <div className="absolute top-[38%] md:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
           <BackgroundCircles />
         </div>
       }
   
       {/* Texte haut */}
-      <div className="z-10 w-3/4 text-center space-y-2 absolute top-20 sm:top-24 md:top-32 lg:top-40 left-1/2 -translate-x-1/2">
+      <div className="z-10 w-3/4 text-center space-y-2 absolute top-16 sm:top-22 md:top-28 lg:top-34 left-1/2 -translate-x-1/2">
 
         <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-[Cinzel_Decorative] font-bold tracking-wider text-white">
           {"Vincent Groslier".split("").map((char, i) => (
@@ -79,7 +79,7 @@ export default function Hero({ pageInfo }: Props) {
   
     
       {/* Image centrée */}
-      <div className="absolute z-20 top-2/5 sm:top-1/2 left-1/2 w-90 h-42 rounded-full transform -translate-x-1/2 -translate-y-1/2 bg-gradient-radial from-[oklch(80%_0.1866_156.76)] to-[oklch(70%_0.1_156.76)] p-1">
+      <div className="absolute z-20 top-2/5 left-1/2 w-90 h-42 rounded-full transform -translate-x-1/2 -translate-y-1/2 bg-gradient-radial from-[oklch(80%_0.1866_156.76)] to-[oklch(70%_0.1_156.76)] p-1">
         <div className="mb-5 sm:mb-20 flex justify-center">
           <Image
             src={pageInfo.heroImageUrl}
@@ -93,9 +93,11 @@ export default function Hero({ pageInfo }: Props) {
       </div>
 
       {/* Phrase "Code Mage" */}
-      <HeroMagicTagline />
+      <div className='absolute bottom-10 w-full h-1/2 flex flex-col justify-end items-center'>
+        <HeroMagicTagline />
 
-      <CircularButtons />
+        <CircularButtons />
+      </div>
   
       {/* Menu circulaire */}
       {/* <CircularMenu /> */}

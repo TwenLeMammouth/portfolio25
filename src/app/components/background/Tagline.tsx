@@ -25,7 +25,7 @@ export default function HeroMagicTagline() {
   }, [])
 
   return (
-    <div className="absolute top-70 mt-8 text-center space-y-1 text-white/50">
+    <div className="mb-8 sm:mt-12 text-center space-y-1 text-white/50">
       {magicLines.map((line, index) => (
         <p
           key={index}

@@ -30,6 +30,7 @@ export default function Skill({ skill }: Props) {
           <Image
             src={skill.imageUrl}
             alt={skill.title}
+            fill
             className="object-contain w-full h-full rounded-lg transition-transform duration-300 group-hover:scale-105"
           />
         )}
