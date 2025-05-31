@@ -8,6 +8,7 @@ import ThreeGlobe from 'three-globe'
 import * as THREE from 'three'
 import { Experience, Location, Trip } from '@/app/types/typings'
 import { useFrame } from '@react-three/fiber'
+import { useIsPortrait } from '@/app/utils/useIsPortrait'
 
 export type EarthCanvasProps = {
   experiences: Experience[]
@@ -29,7 +30,7 @@ const labelPositions: Record<string, 'top' | 'right' | 'bottom' | 'left'> = {
 
 // Composant interne pour la scène, où on peut utiliser les hooks R3F
 function GlobeScene({ experiences, locations, trips, focusIdx, paused }: EarthCanvasProps) {
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
+  const isMobile = useIsPortrait()
   const camDist = isMobile ? 180 : 300
 
   const { camera } = useThree()
