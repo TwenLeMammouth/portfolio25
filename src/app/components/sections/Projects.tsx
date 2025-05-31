@@ -70,14 +70,14 @@ export default function Projects({projects}: Props) {
                 role="group"
                 aria-roledescription="slide"
                 aria-label={`Projet ${i + 1} sur ${projects.length}: ${project.title}`} 
-                className="w-full h-full flex-shrink-0 snap-center flex flex-col space-y-5 justify-evenly items-center p-2 md:p-44">
+                className="w-full h-full flex-shrink-0 snap-center flex flex-col space-y-5 justify-evenly items-center p-2 md:p-8">
                     <motion.img 
                     initial={{ y: -100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     src={project?.imageUrl} 
                     alt={`Aperçu du projet ${project.title}`}
-                    className="flex-shrink-1 w-[150px] h-[150px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] xl:w-[450px] xl:h-[450px] rounded-lg object-cover shadow-md transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-xl hover:brightness-105 hover:contrast-110" />
+                    className="flex-shrink-1 w-[150px] h-[150px] sm:w-[300px] sm:h-[300px] rounded-lg object-cover shadow-md transition-transform duration-500 ease-in-out hover:scale-105 hover:shadow-xl hover:brightness-105 hover:contrast-110" />
                     <div className="space-y-3 md:space-y-8 px-0 md:px-10 max-w-2xl md:max-w-4xl">
                         <div className="text-lg md:text-4xl font-semibold text-center">
                             <motion.div

@@ -76,10 +76,10 @@ export default function About({ pageInfo }: Props) {
         whileInView={{ x: 0, opacity: 1, }}
         src={pageInfo?.profilePicUrl}
         alt="Portrait"
-        className="z-20 w-32 h-32 sm:w-52 sm:h-52 md:w-55 md:h-55 xl:w-[350px] xl:h-[350px] my-8 rounded-xl object-cover shadow-lg"
+        className="z-20 w-32 h-32 sm:w-52 sm:h-52 md:w-55 md:h-55 xl:w-66 xl:h-66 my-4 md:my-12 rounded-xl object-cover shadow-lg"
         loading="lazy"
         />
-        <div className="z-20 space-y-2 sm:space-y-6 max-w-xl md:max-w-4xl rounded-lg bg-zinc-800/40">
+        <div className="z-20 space-y-2 sm:space-y-6 max-w-xl md:max-w-4xl xl:max-w-6xl rounded-lg bg-zinc-800/40">
             <h2 id="about-title" className="text-lg sm:text-3xl font-semibold underline text-[#eee] drop-shadow">Little Background</h2>
             <p className="text-[0.7rem] sm:text-sm lg:text-md xl:text-lg text-gray-300 text-shadow-2xs text-shadow-zinc-800 whitespace-pre-line">
                 {pageInfo?.backgroundInformation && renderHighlightedText(pageInfo.backgroundInformation)}

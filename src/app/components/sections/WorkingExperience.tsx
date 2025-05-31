@@ -59,7 +59,7 @@ export default function WorkingExperience({ experiences, locations, trips }: Pro
       {/* <h3 className="pageTitle absolute top-10 left-1/2 -translate-x-1/2 z-30">Experience</h3> */}
 
       {/* 🪟 Panel gauche */}
-      <div className="relative w-full h-[75dvh] sm:h-[100dvh] flex-grow px-2 pb-8 pt-0 md:absolute md:inset-y-0 md:left-0 md:w-2/5 md:px-6 md:py-36 flex items-center justify-center z-20">
+      <div className="relative w-full h-[75dvh] sm:h-[100dvh] flex-grow px-2 pb-8 pt-0 md:absolute md:inset-y-0 md:left-0 md:w-2/5 md:px-6 md:py-24 flex items-center justify-center z-20">
         <div className="w-full max-w-2xl h-full rounded-2xl border border-white/30 bg-white/5 backdrop-blur-[1px] shadow-[0_0_30px_rgba(255,255,255,0.05)] relative overflow-hidden">
           
           {/* EFFET DE LUMIÈRE */}

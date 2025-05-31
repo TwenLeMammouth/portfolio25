@@ -22,7 +22,7 @@ export default function SoftSkillCard({
       className={`
         flex flex-col justify-start gap-1.5
         w-full
-        h-[17vh] sm:h-[200px] 
+        h-[17vh] sm:h-[150px] 
         p-3 sm:p-4 rounded-xl border transition-all duration-300
         bg-white/5 backdrop-blur-md border-white/10 hover:shadow-[0_0_10px_#12DD88]`}
     >
@@ -31,7 +31,7 @@ export default function SoftSkillCard({
         <div className="text-[#12DD88] text-lg">
           <Icon />
         </div>
-        <h3 className="text-sm font-semibold text-white">
+        <h3 className="text-sm md:text-lg text-font-semibold text-white">
           {title}
         </h3>
       </div>
@@ -58,7 +58,7 @@ export default function SoftSkillCard({
       </div>
 
       {/* Description */}
-      <p className="text-xs text-start leading-tight text-gray-400 line-clamp-4">
+      <p className="text-xs md:text-sm text-start leading-tight text-gray-400 line-clamp-4">
         {description}
       </p>
     </div>

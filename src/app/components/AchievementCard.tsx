@@ -49,7 +49,7 @@ export default function AchievementCard({ achievement, onClick }: Props) {
           alt={achievement.title}
           width={500}
           height={500}
-          className="w-[40%] sm:w-full sm:max-h-40 object-cover rounded-md"
+          className="w-[40%] sm:w-full sm:max-h-36 object-cover rounded-md"
         />
       )}
 
@@ -60,7 +60,7 @@ export default function AchievementCard({ achievement, onClick }: Props) {
           <span className="text-[10px] sm:text-xs text-gray-400 whitespace-nowrap">{dateStr}</span>
         </div>
 
-        <p className="text-[11px] sm:text-sm text-gray-300 line-clamp-3 sm:line-clamp-4">
+        <p className="text-[11px] sm:text-sm text-gray-300 line-clamp-3 sm:line-clamp-4 overflow-y-auto h-15">
           {achievement.description}
         </p>
 

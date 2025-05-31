@@ -25,7 +25,7 @@ export default function ExperienceCard({ experience }: Props) {
     <motion.div
       whileHover={{ scale: 1.01 }}
       transition={{ duration: 0.3 }}
-      className="w-full max-w-5xl min-h-[60vh] md:min-h-[680px] flex flex-col bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-2 sm:p-6 md:p-8 text-white shadow-lg overflow-hidden"
+      className="w-full h-full flex flex-col bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 md:p-8 text-white shadow-lg overflow-hidden"
     >
       {/* Header (logo + titre + dates) */}
       <div className="flex justify-start items-center gap-4 mb-2 md:mb-4">
@@ -77,13 +77,13 @@ export default function ExperienceCard({ experience }: Props) {
         )}
 
         <div className="relative">
-          <ul className="text-[0.7rem] sm:text-base list-disc list-inside text-white/90 space-y-1 overflow-y-auto max-h-[28vh] pr-4 scrollbar-thin scrollbar-thumb-[#12DD88]/60">
+          <ul className="flex-grow text-[0.7rem] sm:text-base list-disc list-inside text-white/90 space-y-1 overflow-y-auto h-[24dvh] pr-4 scrollbar-thin scrollbar-thumb-[#12DD88]/60">
             {experience.points?.map((point, i) => (
               <li key={i}>{point}</li>
             ))}
           </ul>
           {/* Ombre en bas */}
-  <div className="pointer-events-none absolute bottom-0 left-0 w-full h-6 bg-gradient-to-t from-black/10 to-transparent z-10 rounded-b-xs" />
+          <div className="pointer-events-none absolute bottom-0 left-0 w-full h-6 bg-gradient-to-t from-black/10 to-transparent z-10 rounded-b-xs" />
         </div>
       </div>
     </motion.div>

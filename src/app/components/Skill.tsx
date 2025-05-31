@@ -15,7 +15,7 @@ export default function Skill({ skill }: Props) {
   return (
     <div
       className={`relative flex flex-col items-center justify-center
-        aspect-square w-3/4 p-1 sm:p-3
+        aspect-square w-3/4 md:w-1/2 p-1 
         border rounded-xl transition-all duration-300
         ${isPlaceholder
           ? 'bg-white/5 border-white/10 text-zinc-600 cursor-default'

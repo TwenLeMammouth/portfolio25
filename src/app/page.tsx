@@ -27,7 +27,6 @@ const ContactMe = dynamic(() => import('@/app/components/sections/ContactMe'))
 const Arrow = dynamic(() => import('@/app/components/Arrow'))
 
 export default async function Home() {
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
 
   const [
     pageInfo, 
@@ -52,7 +51,6 @@ export default async function Home() {
     fetchLessons(),
     fetchSoftSkills(),
   ])
-
 
   return (
     <div
@@ -92,21 +90,20 @@ export default async function Home() {
         <ContactMe pageInfo={pageInfo} />
       </section>
 
-      {!isMobile && 
-        <Link href="#hero">
-          <footer className="sticky bottom-1 sm:bottom-5 w-full cursor-pointer">
-            <div className="flex justify-center items-center">
-              <Arrow
-                width={88}
-                height={40}
-                strokeWidth={88}
-                color="#12DD88"
-                className="filter grayscale hover:grayscale-0"
-              />
-            </div>
-          </footer>
-        </Link>
-      }
+      <Link href="#hero">
+        <footer className="fixed bottom-0 right-1 sm:bottom-6 sm:right-6 z-50 cursor-pointer">
+          <div className="flex justify-center items-center">
+            <Arrow
+              width={60}
+              height={40}
+              strokeWidth={20}
+              color="#12DD88"
+              className="filter grayscale hover:grayscale-0 transition duration-300"
+            />
+          </div>
+        </footer>
+      </Link>
+
     </div>
   );
 }
